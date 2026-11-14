@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f6f2ec">
+<title>Fatemeh · Three directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+  :root { --bg: #f6f2ec; --ink: #1d1b17; --muted: #5e584f; --line: #ddd4c6; --card: #fffdf9; --accent: #4b3a8c; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: "Libre Franklin", system-ui, sans-serif; font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .top { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); padding: 14px max(16px, env(safe-area-inset-left)) 12px; }
+  .top-in { max-width: 1480px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand svg { width: 40px; height: 40px; flex: none; }
+  .brand h1 { margin: 0; font-family: "Gloock", serif; font-weight: 400; font-size: 1.6rem; line-height: 1; }
+  .brand p { margin: 3px 0 0; font-size: 0.82rem; color: var(--muted); }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .seg { display: inline-flex; background: #ece5da; border-radius: 999px; padding: 4px; gap: 2px; }
+  .seg button { font: 500 0.86rem/1 "Libre Franklin", sans-serif; color: var(--ink); background: transparent; border: 0; border-radius: 999px; padding: 10px 14px; min-height: 40px; cursor: pointer; white-space: nowrap; }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--card); }
+  .seg button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .open { font-size: 0.86rem; color: var(--ink); text-underline-offset: 0.2em; padding: 10px 4px; }
+  main { padding: 18px max(16px, env(safe-area-inset-left)) 32px; }
+  .note { max-width: 1480px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; color: var(--muted); font-size: 0.86rem; }
+  .note b { color: var(--ink); font-weight: 600; }
+  .stage { max-width: 1480px; margin: 0 auto; display: flex; justify-content: center; }
+  .frame { background: var(--card); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; box-shadow: 0 30px 70px -40px rgba(29,27,23,0.5); position: relative; }
+  .frame.phone { width: min(390px, 100%); height: min(844px, calc(100svh - 190px)); min-height: 560px; border-radius: 36px; border: 10px solid #1d1b17; }
+  .frame.phone iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .frame.computer { width: 100%; }
+  .frame.computer iframe { border: 0; display: block; width: 1440px; transform-origin: 0 0; }
+  @media (max-width: 640px) {
+    .top { position: static; }
+    .brand h1 { font-size: 1.25rem; }
+    .brand p { display: none; }
+    .brand svg { width: 32px; height: 32px; }
+    .seg { flex-wrap: wrap; border-radius: 22px; }
+    .seg button { padding: 9px 12px; font-size: 0.82rem; }
+    .note { font-size: 0.8rem; }
+    .note span:last-child { display: none; }
+    .frame.phone { border-width: 0; border-radius: 16px; height: calc(100svh - 230px); }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="64" r="44" fill="none" stroke="#1d1b17" stroke-width="4"></circle><path d="M16.2 60C22 52 27 40 37 40C45 40 51 50 60 50C69 50 75 40 83 40C93 40 98 52 103.8 60A44 44 0 0 0 16.2 60Z" fill="#4b3a8c" fill-opacity="0.24"></path><path d="M16.2 60C22 52 27 40 37 40C45 40 51 50 60 50C69 50 75 40 83 40C93 40 98 52 103.8 60" fill="none" stroke="#4b3a8c" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="0.1 9.4"></path></svg>
+      <div><h1>Three directions for your website</h1><p>Tap one, switch between phone and computer, and pick the one that feels most like you.</p></div>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Direction">
+        <button type="button" data-view="a" aria-pressed="true">A · Editorial</button>
+        <button type="button" data-view="b" aria-pressed="false">B · Bold &amp; warm</button>
+        <button type="button" data-view="c" aria-pressed="false">C · Minimal</button>
+        <button type="button" data-view="logo" aria-pressed="false">Logo</button>
+      </div>
+      <div class="seg" role="group" aria-label="Screen">
+        <button type="button" data-device="phone" aria-pressed="true">Phone</button>
+        <button type="button" data-device="computer" aria-pressed="false">Computer</button>
+      </div>
+      <a class="open" id="open" href="a-editorial.html" target="_blank" rel="noopener">Open full page ↗</a>
+    </div>
+  </div>
+</header>
+<main>
+  <p class="note"><span id="desc"></span><span>All three use the same content. Anything marked <b>“To be supplied”</b> is a detail we still need from you.</span></p>
+  <div class="stage"><div class="frame phone" id="frame"><iframe id="view" title="Website preview" src="a-editorial.html"></iframe></div></div>
+</main>
+<script>
+  const PAGES = {
+    a: { src: "a-editorial.html", desc: "A · Editorial — like a printed journal: warm paper, classic headlines, violet marker notes." },
+    b: { src: "b-bold-warm.html", desc: "B · Bold & warm — big confident type on sunny colour, hopeful and direct." },
+    c: { src: "c-minimal.html", desc: "C · Minimal — calm and clinical, rounded cards, clean modern type." },
+    logo: { src: "logo.html", desc: "Your logo — a hairline drawn in marker dots, shown in each direction's style." },
+  };
+  const frame = document.getElementById("frame"), view = document.getElementById("view"), open = document.getElementById("open"), desc = document.getElementById("desc");
+  let state = { view: "a", device: window.innerWidth < 700 ? "phone" : "computer" };
+  try { const h = location.hash.slice(1).split("-"); if (PAGES[h[0]]) state.view = h[0]; if (h[1] === "phone" || h[1] === "computer") state.device = h[1]; } catch (e) {}
+
+  function fit() {
+    if (!frame.classList.contains("computer")) { view.style.transform = ""; view.style.height = ""; frame.style.height = ""; return; }
+    const w = frame.clientWidth, scale = Math.min(1, w / 1440);
+    const visible = Math.max(420, window.innerHeight - frame.getBoundingClientRect().top - 24);
+    view.style.transform = "scale(" + scale + ")";
+    view.style.height = Math.round(visible / scale) + "px";
+    frame.style.height = visible + "px";
+  }
+  function render() {
+    const device = state.view === "logo" ? "computer" : state.device;
+    const page = PAGES[state.view];
+    if (!view.getAttribute("src") || view.getAttribute("src") !== page.src) view.setAttribute("src", page.src);
+    frame.className = "frame " + device;
+    open.href = page.src; desc.textContent = page.desc;
+    document.querySelectorAll("[data-view]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.view === state.view)));
+    document.querySelectorAll("[data-device]").forEach(b => { b.setAttribute("aria-pressed", String(b.dataset.device === device)); b.disabled = state.view === "logo"; });
+    try { history.replaceState(null, "", "#" + state.view + "-" + state.device); } catch (e) {}
+    fit();
+  }
+  document.querySelectorAll("[data-view]").forEach(b => b.addEventListener("click", () => { state.view = b.dataset.view; render(); }));
+  document.querySelectorAll("[data-device]").forEach(b => b.addEventListener("click", () => { state.device = b.dataset.device; render(); }));
+  window.addEventListener("resize", fit);
+  render();
+</script>
+</body>
+</html>
