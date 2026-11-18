@@ -4,123 +4,122 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#171a23">
-<title>Fatemeh Hair Restoration · Website preview</title>
+<meta name="theme-color" content="#fff7ee">
+<title>Fatemeh · Website preview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..600;1,400..600&family=Manrope:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,800&family=Archivo:wght@400;500;600&display=swap">
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; }
-  /* Layout: the clinic's own navy and champagne. A sticky bar with three views, then the page as one continuous strip. */
   :root {
-    --bg: #171a23; --panel: #1e2331; --fg: #eeebe5; --muted: #a9adb6; --line: rgba(238,235,229,.14); --accent: #d4b48f; --on-accent: #171a23;
-    --display: "Playfair Display", Georgia, "Times New Roman", serif;
-    --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    color-scheme: dark;
+    --cream: #fff7ee; --blush: #fbe5d3; --ink: #1f1a15; --muted: #6a5e52; --line: #ecdccb; --sun: #f3a35f; --deep: #b4531f;
+    --display: "Big Shoulders", "Arial Narrow", Impact, sans-serif;
+    --body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: light;
   }
-  body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.55; }
-  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+  body { background: var(--cream); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
   .pad { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-  .intro { max-width: 1100px; margin: 0 auto; padding-block: 40px 28px; display: grid; gap: 14px; }
-  .brand { font-family: var(--display); font-size: 1.6rem; line-height: 1; }
-  .brand small { display: block; margin-top: 6px; font-family: var(--body); font-size: .62rem; letter-spacing: .32em; text-transform: uppercase; color: var(--accent); }
-  h1 { margin: 18px 0 0; font-family: var(--display); font-weight: 400; font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: -.015em; text-wrap: balance; }
-  h1 em { color: var(--accent); }
-  .intro p { margin: 0; max-width: 60ch; color: var(--muted); }
-  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-block: 1px solid var(--line); padding-block: 10px; }
+  .intro { max-width: 1100px; margin: 0 auto; padding-block: 32px 24px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 800; font-size: 1.7rem; letter-spacing: .05em; }
+  .logo span { color: var(--sun); }
+  .logo svg { width: 34px; height: 34px; }
+  .card { margin-top: 22px; background: var(--sun); border-radius: 12px; padding: 28px 24px 26px; position: relative; overflow: hidden; }
+  .card::before { content: ""; position: absolute; right: -90px; top: -110px; width: 300px; height: 300px; border-radius: 50%; background: #f8c59a; opacity: .6; }
+  .card > * { position: relative; }
+  h1 { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(3rem, 9vw, 5.6rem); line-height: .88; }
+  h1 em { font-style: normal; color: var(--cream); }
+  .card p { margin: 16px 0 0; max-width: 56ch; font-weight: 500; }
+  .bar { position: sticky; top: 0; z-index: 5; background: rgba(255,247,238,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding-block: 10px; padding-top: max(10px, env(safe-area-inset-top, 0px)); }
   .bar-in { max-width: 1100px; margin: 0 auto; display: flex; gap: 6px; flex-wrap: wrap; }
-  .bar button { font: 600 .74rem/1 var(--body); letter-spacing: .18em; text-transform: uppercase; color: var(--fg); background: transparent; border: 1px solid var(--line); padding: 12px 16px; cursor: pointer; }
-  .bar button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
-  .bar button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .bar button { font: 600 .78rem/1 var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); background: #fff; border: 0; border-radius: 999px; min-height: 44px; padding: 0 18px; cursor: pointer; box-shadow: 0 10px 24px -18px rgba(120,66,24,.6); }
+  .bar button[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+  .bar button:focus-visible { outline: 2px solid var(--deep); outline-offset: 2px; }
   main { padding-block: 24px 48px; }
   .view { margin: 0 auto; }
-  .strip { display: flex; flex-direction: column; box-shadow: 0 30px 80px -30px rgba(0,0,0,.7); }
-  .strip img { display: block; width: 100%; height: auto; max-width: 100%; }
+  .strip { display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 70px -36px rgba(120,66,24,.55); background: #fff; }
+  .strip img { display: block; width: 100%; height: auto; }
   #phone { max-width: 390px; }
-  #desktop { max-width: 1440px; }
-  #leaflet { max-width: 1100px; display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  @media (max-width: 720px) { #leaflet { grid-template-columns: 1fr; } }
-  #leaflet figure { margin: 0; }
-  #leaflet img { display: block; width: 100%; height: auto; box-shadow: 0 30px 80px -30px rgba(0,0,0,.7); }
-  #leaflet figcaption { margin-top: 10px; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  #computer { max-width: 1440px; }
+  #pages { max-width: 1440px; display: grid; gap: 28px; }
+  #pages figure { margin: 0; }
+  #pages img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 30px 70px -36px rgba(120,66,24,.55); }
+  #pages figcaption { margin-top: 10px; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 1.5rem; }
   .needs { max-width: 1100px; margin: 0 auto; padding-block: 8px 64px; }
-  .needs h2 { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.4rem); }
-  .needs p { margin: 8px 0 0; color: var(--muted); max-width: 60ch; }
-  .needs ul { margin: 22px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .needs h2 { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: .9; }
+  .needs > p { margin: 12px 0 0; color: var(--muted); max-width: 60ch; }
+  .needs ul { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   @media (max-width: 720px) { .needs ul { grid-template-columns: 1fr; } }
-  .needs li { padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; }
-  .needs li span { color: var(--accent); font-family: var(--display); min-width: 1.4em; font-variant-numeric: tabular-nums; }
+  .needs li { background: #fff; border-radius: 10px; padding: 14px 16px; display: flex; gap: 14px; align-items: baseline; box-shadow: 0 20px 40px -32px rgba(120,66,24,.5); }
+  .needs li b { font-family: var(--display); font-weight: 800; font-size: 1.6rem; line-height: .9; color: var(--sun); min-width: 1.3em; }
 </style>
-
 </head>
 <body>
 <header class="pad">
   <div class="intro">
-    <p class="brand">Fatemeh<small>Hair Restoration</small></p>
-    <h1>Your new website <em>and leaflet.</em></h1>
-    <p>A preview for your review. Switch between the phone and computer views, or see the printed leaflet. Anything marked &ldquo;To be supplied&rdquo; is a detail we need from you before launch.</p>
+    <div class="logo"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="64" r="44" fill="none" stroke="#1f1a15" stroke-width="5"/><path d="M16.2 60C22 52 27 40 37 40C45 40 51 50 60 50C69 50 75 40 83 40C93 40 98 52 103.8 60A44 44 0 0 0 16.2 60Z" fill="#e07b3c" fill-opacity=".35"/><path d="M16.2 60C22 52 27 40 37 40C45 40 51 50 60 50C69 50 75 40 83 40C93 40 98 52 103.8 60" fill="none" stroke="#e07b3c" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 9.4"/></svg><div>FATEMEH<span>.</span></div></div>
+    <div class="card">
+      <h1>Your new <em>website.</em></h1>
+      <p>A preview for your review. Switch between the phone and computer views, or see the other pages. Anything with an orange dotted marker is a detail we still need from you before launch.</p>
+    </div>
   </div>
 </header>
 
 <nav class="bar pad" aria-label="Preview views">
   <div class="bar-in" role="group">
-    <button type="button" id="btn-phone" aria-pressed="true">On a phone</button>
-    <button type="button" id="btn-desktop" aria-pressed="false">On a computer</button>
-    <button type="button" id="btn-leaflet" aria-pressed="false">Leaflet</button>
+    <button type="button" id="btn-phone" aria-pressed="true">Phone</button>
+    <button type="button" id="btn-computer" aria-pressed="false">Computer</button>
+    <button type="button" id="btn-pages" aria-pressed="false">Other pages</button>
   </div>
 </nav>
 
 <main class="pad">
   <div class="view strip" id="phone">
-      <img src="iphone-1.jpg" alt="Homepage on a phone, part 1 of 12" width="780" height="3200">
-      <img src="iphone-2.jpg" alt="Homepage on a phone, part 2 of 12" width="780" height="3200">
-      <img src="iphone-3.jpg" alt="Homepage on a phone, part 3 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-4.jpg" alt="Homepage on a phone, part 4 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-5.jpg" alt="Homepage on a phone, part 5 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-6.jpg" alt="Homepage on a phone, part 6 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-7.jpg" alt="Homepage on a phone, part 7 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-8.jpg" alt="Homepage on a phone, part 8 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-9.jpg" alt="Homepage on a phone, part 9 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-10.jpg" alt="Homepage on a phone, part 10 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-11.jpg" alt="Homepage on a phone, part 11 of 12" width="780" height="3200" loading="lazy">
-      <img src="iphone-12.jpg" alt="Homepage on a phone, part 12 of 12" width="780" height="748" loading="lazy">
+      <img src="b-phone-1.jpg" alt="Homepage on a phone, part 1 of 9" width="780" height="3200">
+      <img src="b-phone-2.jpg" alt="Homepage on a phone, part 2 of 9" width="780" height="3200">
+      <img src="b-phone-3.jpg" alt="Homepage on a phone, part 3 of 9" width="780" height="3200" loading="lazy">
+      <img src="b-phone-4.jpg" alt="Homepage on a phone, part 4 of 9" width="780" height="3200" loading="lazy">
+      <img src="b-phone-5.jpg" alt="Homepage on a phone, part 5 of 9" width="780" height="3200" loading="lazy">
+      <img src="b-phone-6.jpg" alt="Homepage on a phone, part 6 of 9" width="780" height="3200" loading="lazy">
+      <img src="b-phone-7.jpg" alt="Homepage on a phone, part 7 of 9" width="780" height="3200" loading="lazy">
+      <img src="b-phone-8.jpg" alt="Homepage on a phone, part 8 of 9" width="780" height="3200" loading="lazy">
+      <img src="b-phone-9.jpg" alt="Homepage on a phone, part 9 of 9" width="780" height="372" loading="lazy">
   </div>
-  <div class="view strip" id="desktop" hidden>
-      <img src="desktop-1.jpg" alt="Homepage on a computer, part 1 of 6" width="1440" height="2400">
-      <img src="desktop-2.jpg" alt="Homepage on a computer, part 2 of 6" width="1440" height="2400">
-      <img src="desktop-3.jpg" alt="Homepage on a computer, part 3 of 6" width="1440" height="2400" loading="lazy">
-      <img src="desktop-4.jpg" alt="Homepage on a computer, part 4 of 6" width="1440" height="2400" loading="lazy">
-      <img src="desktop-5.jpg" alt="Homepage on a computer, part 5 of 6" width="1440" height="2400" loading="lazy">
-      <img src="desktop-6.jpg" alt="Homepage on a computer, part 6 of 6" width="1440" height="731" loading="lazy">
+  <div class="view strip" id="computer" hidden>
+      <img src="b-computer-1.jpg" alt="Homepage on a computer, part 1 of 5" width="1440" height="2400">
+      <img src="b-computer-2.jpg" alt="Homepage on a computer, part 2 of 5" width="1440" height="2400">
+      <img src="b-computer-3.jpg" alt="Homepage on a computer, part 3 of 5" width="1440" height="2400" loading="lazy">
+      <img src="b-computer-4.jpg" alt="Homepage on a computer, part 4 of 5" width="1440" height="2400" loading="lazy">
+      <img src="b-computer-5.jpg" alt="Homepage on a computer, part 5 of 5" width="1440" height="1647" loading="lazy">
   </div>
-  <div class="view" id="leaflet" hidden>
-    <figure><img src="leaflet-front.jpg" alt="Leaflet front: Miss your hairline?" width="1166" height="1634"><figcaption>Front · A5</figcaption></figure>
-    <figure><img src="leaflet-back.jpg" alt="Leaflet back: It starts with six photos" width="1166" height="1634"><figcaption>Back · A5</figcaption></figure>
+  <div class="view" id="pages" hidden>
+    <figure><img src="b-page-treatments.jpg" alt="Treatments page on a computer" width="1440" height="3823" loading="lazy"><figcaption>Treatments</figcaption></figure>
+    <figure><img src="b-page-about.jpg" alt="About page on a computer" width="1440" height="4707" loading="lazy"><figcaption>About</figcaption></figure>
+    <figure><img src="b-page-assessment.jpg" alt="Free assessment page on a computer" width="1440" height="1618" loading="lazy"><figcaption>Free assessment</figcaption></figure>
+    <figure><img src="b-page-faq.jpg" alt="Questions page on a computer" width="1440" height="3641" loading="lazy"><figcaption>Questions</figcaption></figure>
   </div>
 </main>
 
 <section class="needs pad" aria-labelledby="needs-title">
-  <div>
-    <h2 id="needs-title">What we need from you</h2>
-    <p>These details replace the &ldquo;To be supplied&rdquo; markers. Only real, checkable information goes on the site. Results and reviews sections appear automatically once real ones are added.</p>
-    <ul>
-      <li><span>1</span>Your professional title and registration number</li>
-      <li><span>2</span>Qualifications and memberships</li>
-      <li><span>3</span>Clinic regulator and registration (for example CQC)</li>
-      <li><span>4</span>WhatsApp number, phone and email</li>
-      <li><span>5</span>Clinic address and opening hours</li>
-      <li><span>6</span>Price range and finance options, if offered</li>
-      <li><span>7</span>A few photos of your clinic and treatment room</li>
-      <li><span>8</span>Real before and after photos, with each patient&rsquo;s written consent</li>
-      <li><span>9</span>Genuine patient reviews you have permission to share</li>
-    </ul>
-  </div>
+  <h2 id="needs-title">Still needed before launch</h2>
+  <p>Only real, checkable information goes on the site. Results and reviews appear automatically once real ones, with consent, are added.</p>
+  <ul>
+    <li><b>1</b>The doctor&rsquo;s name and GMC number</li>
+    <li><b>2</b>The clinic&rsquo;s CQC registration</li>
+    <li><b>3</b>Your WhatsApp number</li>
+    <li><b>4</b>The business&rsquo;s legal name and ICO registration</li>
+    <li><b>5</b>The doctor to check the medical wording</li>
+    <li><b>6</b>Prices for beard, eyebrow and PRP, and any extra costs</li>
+    <li><b>7</b>Photos and video of the clinic</li>
+    <li><b>8</b>Before and after photos, with each patient&rsquo;s written consent</li>
+    <li><b>9</b>A few lines about you, and the languages you speak</li>
+    <li><b>10</b>Your Instagram and TikTok links</li>
+  </ul>
 </section>
 
 <script>
-  const views = { phone: document.getElementById("phone"), desktop: document.getElementById("desktop"), leaflet: document.getElementById("leaflet") };
-  const btns = { phone: document.getElementById("btn-phone"), desktop: document.getElementById("btn-desktop"), leaflet: document.getElementById("btn-leaflet") };
+  const views = { phone: document.getElementById("phone"), computer: document.getElementById("computer"), pages: document.getElementById("pages") };
+  const btns = { phone: document.getElementById("btn-phone"), computer: document.getElementById("btn-computer"), pages: document.getElementById("btn-pages") };
   function show(name) {
     if (!views[name]) name = "phone";
     for (const k in views) { views[k].hidden = k !== name; btns[k].setAttribute("aria-pressed", String(k === name)); }
