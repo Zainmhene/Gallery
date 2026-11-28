@@ -1,0 +1,26 @@
+{
+  "name": "open-chair-animation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open Chair animation engine (Remotion). Separate from the production system.",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render",
+    "typecheck": "tsc --noEmit",
+    "gallery": "tsx scripts/build-gallery.tsx"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.547",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.547",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.11",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

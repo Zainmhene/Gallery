@@ -1,0 +1,137 @@
+<title>Open Chair Character Concepts</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a casting sheet. One row per concept — stage on the left, spec card on the right — then a comparison table. */
+:root{
+  --bg:#f2f2f7; --panel:#ffffff; --panel-2:#e7e7f0; --fg:#16172b; --muted:#5d5f7a; --line:#d5d6e3; --accent:#3a35c9; --accent-fg:#ffffff;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#111220; --panel:#1b1c2e; --panel-2:#26283d; --fg:#ececf6; --muted:#a3a5c0; --line:#33354d; --accent:#a9a5ff; --accent-fg:#14142a; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#111220; --panel:#1b1c2e; --panel-2:#26283d; --fg:#ececf6; --muted:#a3a5c0; --line:#33354d; --accent:#a9a5ff; --accent-fg:#14142a; color-scheme:dark }
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-block:40px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(2rem,5vw,3.25rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;letter-spacing:-.01em}
+p{margin:0;max-width:65ch}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:12px}
+header p{color:var(--muted);font-size:1.05rem}
+
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-block:12px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.ctl{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--panel)}
+.seg button{font:500 .875rem var(--body);color:var(--muted);background:none;border:0;border-radius:999px;padding:6px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.concept{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start;padding-top:32px;border-top:1px solid var(--line)}
+.stage{background:var(--panel-2);border-radius:6px;padding:14px;display:flex;justify-content:center}
+.stage svg{display:block;width:100%;height:auto;border-radius:3px}
+.stage.tall svg{width:min(100%,330px)}
+.card{display:flex;flex-direction:column;gap:16px;min-width:0}
+.card .idea{color:var(--muted)}
+dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;font-size:.92rem}
+dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+dd{margin:0}
+.swatches{display:flex;flex-wrap:wrap;gap:6px}
+.swatches span{width:34px;height:34px;border-radius:50%;border:1px solid var(--line)}
+.faces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.faces figure{margin:0;display:flex;flex-direction:column;gap:4px}
+.faces svg{display:block;width:100%;height:auto;border-radius:4px;aspect-ratio:1}
+.faces figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);text-align:center}
+
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+th,td{text-align:left;padding:10px 14px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td:first-child{font-family:var(--display);font-weight:700;white-space:nowrap}
+.rec{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px}
+section.end{display:flex;flex-direction:column;gap:20px;padding-top:32px;border-top:1px solid var(--line)}
+@media (max-width:860px){ .concept{grid-template-columns:minmax(0,1fr)} }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Open Chair · Animation identity · Phase 1</span>
+    <h1>Five character concepts</h1>
+    <p>Five separate directions for the Open Chair cast. Each one is a React and SVG component in the Remotion project, so whichever you pick becomes the rig directly. Every stage shows a host, a guest and an empty chair in that style.</p>
+  </header>
+
+  <div class="controls">
+    <div class="ctl"><span class="eyebrow" id="lbl-expr">Host expression</span>
+      <div class="seg" role="group" aria-labelledby="lbl-expr" id="seg-expr">
+        <button id="e-neutral" data-v="neutral" aria-pressed="true">Neutral</button>
+        <button id="e-happy" data-v="happy" aria-pressed="false">Happy</button>
+        <button id="e-surprised" data-v="surprised" aria-pressed="false">Surprised</button>
+        <button id="e-sceptical" data-v="sceptical" aria-pressed="false">Sceptical</button>
+      </div>
+    </div>
+    <div class="ctl"><span class="eyebrow" id="lbl-fmt">Frame</span>
+      <div class="seg" role="group" aria-labelledby="lbl-fmt" id="seg-fmt">
+        <button id="f-wide" data-v="wide" aria-pressed="true">Long-form 1920 × 1080</button>
+        <button id="f-tall" data-v="tall" aria-pressed="false">Shorts 1080 × 1920</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="concepts" style="display:flex;flex-direction:column;gap:40px"></main>
+
+  <section class="end">
+    <h2>Side by side</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Concept</th><th>Outline</th><th>Height</th><th>Reads small (Shorts, thumbnails)</th><th>Rigging effort</th><th>Main risk</th></tr></thead>
+        <tbody id="compare"></tbody>
+      </table>
+    </div>
+    <div class="rec">
+      <span class="eyebrow">My recommendation</span>
+      <h3 style="font-size:1.35rem">Concept 1, Loose Ends. Runner-up: Concept 3, Pinned Paper.</h3>
+      <p>Loose Ends is the only one where the style itself says the channel name: every line is left open. That rule is simple enough to apply to any character, prop or background, and nobody else is using it. It is also the cheapest to animate, because limbs are single lines.</p>
+      <p>Pinned Paper is the stronger choice if you want a richer, more crafted look and accept slower production. Stack is the safest for tiny screens but the least distinctive. These are direction sketches; the chosen one gets refined before any rigging starts.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+"use strict";
+var DATA=/*__DATA__*/null;
+var EXPR=["neutral","happy","surprised","sceptical"];
+var state={expr:"neutral",fmt:"wide"};
+function build(){
+  document.getElementById("concepts").innerHTML=DATA.map(function(c,i){
+    return '<section class="concept" id="concept-'+(i+1)+'"><div class="stage" id="stage-'+i+'"></div><div class="card">'+
+      '<div><span class="eyebrow">Concept '+(i+1)+'</span><h2>'+c.name+'</h2></div><p class="idea">'+c.idea+'</p>'+
+      '<dl>'+c.specs.map(function(s){ return "<dt>"+s[0]+"</dt><dd>"+s[1]+"</dd>"; }).join("")+'</dl>'+
+      '<div class="swatches" aria-label="Palette">'+c.palette.map(function(p){ return '<span style="background:'+p+'" title="'+p+'"></span>'; }).join("")+'</div>'+
+      '<div class="faces">'+EXPR.map(function(e){ return "<figure>"+c.faces[e]+"<figcaption>"+e+"</figcaption></figure>"; }).join("")+'</div>'+
+      '</div></section>';
+  }).join("");
+  document.getElementById("compare").innerHTML=DATA.map(function(c,i){ return "<tr><td>"+(i+1)+" · "+c.name+"</td>"+c.compare.map(function(x){ return "<td>"+x+"</td>"; }).join("")+"</tr>"; }).join("");
+  drawStages();
+}
+function drawStages(){
+  DATA.forEach(function(c,i){
+    var el=document.getElementById("stage-"+i);
+    el.className="stage"+(state.fmt==="tall"?" tall":"");
+    el.innerHTML=c.stages[state.fmt][state.expr];
+  });
+}
+function wire(segId,key){
+  var seg=document.getElementById(segId);
+  seg.addEventListener("click",function(ev){
+    var b=ev.target.closest("button"); if(!b) return;
+    state[key]=b.dataset.v;
+    Array.prototype.forEach.call(seg.querySelectorAll("button"),function(x){ x.setAttribute("aria-pressed",String(x===b)); });
+    drawStages();
+  });
+}
+build(); wire("seg-expr","expr"); wire("seg-fmt","fmt");
+})();
+</script>
