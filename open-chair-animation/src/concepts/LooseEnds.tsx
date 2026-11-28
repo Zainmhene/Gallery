@@ -6,10 +6,25 @@ const INK = '#1d2440';
 const PAPER = '#ecebf4';
 const YELLOW = '#ffb92e';
 
+/** 0..1: how much of every line has been drawn. Lets a whole scene sketch itself on. */
+export const DrawContext = React.createContext(1);
+
 /** The one rule of this style: an even ink line that is never closed. */
-const Line: React.FC<{readonly d: string; readonly w?: number}> = ({d, w = 10}) => (
-  <path d={d} fill="none" stroke={INK} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" />
-);
+export const Line: React.FC<{readonly d: string; readonly w?: number}> = ({d, w = 10}) => {
+  const drawn = React.useContext(DrawContext);
+  if (drawn <= 0) return null;
+  return (
+    <path
+      d={d}
+      fill="none"
+      stroke={INK}
+      strokeWidth={w}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...(drawn < 1 ? {pathLength: 1, strokeDasharray: '1 1', strokeDashoffset: 1 - drawn} : {})}
+    />
+  );
+};
 
 const Mouth: React.FC<Pick<PartProps, 'expression'>> = ({expression}) => {
   if (expression === 'happy') return <Line d="M-18 40 Q2 62 24 40" w={8} />;
